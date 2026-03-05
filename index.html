@@ -10,12 +10,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/theme-wedding-classic.css" />
+  <link rel="stylesheet" href="assets/css/theme-xv-rose.css" />
+
 </head>
 
-<body class="theme-wedding">
+<body class="theme-xv">
 
   <!-- INTRO SOBRE -->
   <section class="envelope" id="envelope" aria-label="Sobre de invitación">
@@ -24,12 +26,12 @@
 
     <div class="envelope__content">
       <p class="eyebrow">Familia Rodríguez López</p>
-      <h1 class="names">Joshua &amp; Natasha</h1>
-      <p class="tagline"><em>Hoy comienza nuestro para siempre</em></p>
+      <h1 class="names">Amelia <span>XV</span> Años</h1>
+      <p class="tagline"><em>Ven a festejar conmigo</em></p>
 
-      <div class="seal" aria-hidden="true"></div>
+      <div class="seal hero-seal" aria-hidden="true"></div>
 
-      <button class="btn btn--primary" id="openInvite" type="button">
+      <button class="btn btn-primary" id="openInvite" type="button">
         Ver invitación
       </button>
 
@@ -40,7 +42,7 @@
   <!-- MAIN -->
   <header class="topbar" id="topbar">
     <nav class="nav">
-      <a class="brand" href="#inicio" aria-label="Inicio">J &amp; N</a>
+      <a class="brand" href="#inicio" aria-label="Inicio">Amelia XV Años</a>
       <div class="nav__links">
         <a href="#itinerario">Itinerario</a>
         <a href="#regalos">Regalos</a>
@@ -54,15 +56,15 @@
     <section class="section hero">
       <div class="container">
         <div class="card hero-card">
-          <p class="eyebrow">Invitación de boda</p>
-          <h2 class="headline names">Joshua &amp; Natasha</h2>
+          <p class="eyebrow">Invitación a mis XV años</p>
+          <h2 class="headline names">Amelia</h2>
           <p class="subtle"><em>Sábado · 13 de Septiembre de 2026 · 5:00 PM</em></p>
 
           <div class="divider" aria-hidden="true"></div>
 
           <div class="hero-actions">
-            <a class="btn btn--primary" href="#rsvp">Confirmar asistencia</a>
-            <a class="btn btn--ghost" href="#detalles">Ver detalles</a>
+            <a class="btn btn-primary" href="#rsvp">Confirmar asistencia</a>
+            <button class="btn btn--outline" type="button" data-modal="modal-details">Detalles del evento</button>
           </div>
         </div>
       </div>
@@ -472,9 +474,30 @@
     </footer>
   </main>
 
+  <div class="modal" id="modal-details" aria-hidden="true">
+    <div class="modal__overlay" data-close></div>
+
+    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="detailsTitle">
+      <h3 id="detailsTitle" class="modal__title">Detalles del evento</h3>
+
+      <div class="modal__body">
+        <p><strong>Código de vestimenta:</strong> Formal</p>
+        <p><strong>Evento:</strong> Evento familiar (todas las edades)</p>
+        <p><strong>Puntualidad:</strong> Te sugerimos llegar 15 minutos antes</p>
+        <p><strong>Ubicación:</strong> Hacienda San Miguel, Ciudad</p>
+      </div>
+
+      <div class="modal__actions">
+        <button class="btn btn-primary" data-close>Cerrar</button>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/base.js"></script>
-  <script src="assets/js/modal.js"></script>
+  <script src="assets/js/modal.js" defer></script>
   <script src="assets/js/rsvp.js"></script>
+
+  
 </body>
 
 </html>

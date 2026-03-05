@@ -1,0 +1,448 @@
+/* XV theme  */
+.theme-xv {
+  --bg: #F8F2F3;
+  --surface: #F3E6E9;
+
+  --accent: #D9A3A8;
+  --accent-strong: #B97C86;
+
+  --gold: #C8B79D;
+  --gold-strong: #B7955A;
+
+  --text-primary: #2A2224;
+  --text-secondary: #7C5F66;
+  --ink: #2f2a28;
+  --btn: #f3e6e9;
+
+  --line: rgba(185, 124, 134, .55);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.topbar,
+.main {
+  position: relative;
+  z-index: 1;
+}
+
+.theme-xv .topbar {
+  background-color: var(--surface);
+}
+
+.btn-primary {
+  background: var(--accent-strong) !important;
+  color: #fff;
+}
+
+.btn--outline {
+  background: var(--btn);
+}
+
+.divider {
+  background: var(--line);
+}
+
+.section-title {
+  color: var(--accent-strong);
+}
+
+/* NOMBRES Y TÍTULOS FONT */
+.names {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1.1;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+
+/* INTRO SOBRE */
+.envelope .tagline {
+  font-style: normal;
+  letter-spacing: .05em;
+  font-size: 14px;
+}
+
+.envelope {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--btn) url("../img/sobre.png") center/cover no-repeat;
+}
+
+.envelope__bg {
+  position: absolute;
+  inset: 0;
+  filter: contrast(1.04) saturate(.95);
+}
+
+.envelope__veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(246, 232, 237, 0.5);
+}
+
+.envelope__content {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 42px 22px;
+  text-align: center;
+}
+
+.envelope__content::before {
+  display: none;
+}
+
+.envelope .eyebrow {
+  color: rgba(110, 91, 97, 0.95);
+}
+
+.envelope .names {
+  margin: 8px 0 12px;
+  letter-spacing: normal;
+  font-weight: 600;
+  font-size: clamp(28px, 6vw, 64px);
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.envelope .tagline {
+  margin: 0 0 18px;
+  color: rgba(47, 42, 40, 0.95);
+}
+
+
+/* Sello base (no debe moverse) */
+.hero-seal {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 18px;
+  position: relative;
+  display: block;
+  /* <- clave: evita baseline raro */
+  overflow: hidden;
+  /* <- recorta el brillo al círculo */
+  border-radius: 50%;
+  transform: translateZ(0);
+  /* <- estabiliza render */
+}
+
+/* Tu imagen del sello (la que ya tienes) */
+.hero-seal {
+  background-image: url("../img/sello_o.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Brillo */
+.hero-seal::after {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  /* más grande para que cruce bien */
+  background: linear-gradient(120deg,
+      transparent 40%,
+      rgba(255, 255, 255, .55) 50%,
+      transparent 60%);
+  transform: translateX(-120%) rotate(0.001deg);
+  /* micro fix safari */
+  animation: sealShine 5.5s infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  /* se ve más “dorado” */
+  opacity: .75;
+}
+
+@keyframes sealShine {
+  0% {
+    transform: translateX(-120%) rotate(0.001deg);
+  }
+
+  55% {
+    transform: translateX(120%) rotate(0.001deg);
+  }
+
+  100% {
+    transform: translateX(120%) rotate(0.001deg);
+  }
+}
+
+
+.envelope .hint {
+  margin: 14px 0 0;
+  font-size: 12px;
+  letter-spacing: .12em;
+  color: rgba(110, 91, 98, 0.7);
+  text-transform: uppercase;
+}
+
+/* Animación al abrir */
+.envelope--hide {
+  animation: envelopeFade .52s ease forwards;
+}
+
+@keyframes envelopeFade {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* Main background touches */
+.main {
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(214, 181, 122, .14),
+      transparent 60%), radial-gradient(900px 500px at 80% 30%,
+      rgba(176, 141, 87, .10), transparent 55%),
+    linear-gradient(180deg, #dbd3c3, #FBF7F0);
+}
+
+/* Hero card */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(246, 232, 240, 0.65),
+      rgba(194, 106, 150, 0.25)),
+    url("../img/xv-header.jpg") center/cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-card {
+  text-align: center;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.hero .hero-card .eyebrow {
+  color: #2E2A25;
+  font-weight: 400;
+}
+
+.hero-card .subtle {
+  position: relative;
+  display: inline-block;
+  padding: 6px 14px;
+  color: #534d46;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+
+
+.hero-card .headline {
+  letter-spacing: .01em;
+}
+
+/* ===== LOOK LISO (SIN CONTENEDORES) ===== */
+.card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.card::before {
+  display: none !important;
+}
+
+/* Para que el contenido no quede pegado a los bordes */
+.section .container {
+  max-width: 980px;
+}
+
+/* ===== ESTÉTICA INVITACIÓN (EDITORIAL) ===== */
+.section {
+  position: relative;
+}
+
+
+/* Títulos más “impresos” */
+.title,
+.headline {
+  text-align: center;
+}
+
+.paragraph,
+.muted,
+.row {
+  text-align: center;
+}
+
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .45);
+
+  /*más estilo*/
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal__overlay,
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.modal__content,
+.modal__panel {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  width: min(560px, calc(100% - 32px));
+  background: var(--surface, #fff);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .25);
+}
+
+.modal.is-open .modal__content,
+.modal.is-open .modal__panel {
+  animation: modalIn .22s ease-out both;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    scale: (1);
+  }
+
+}
+
+/* Estilo del panel */
+.modal__content,
+.modal__panel {
+  border: 1px solid rgba(185, 124, 134, .22);
+  background: radial-gradient(700px 240px at 15% 0%, rgba(185, 124, 134, .14), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .82));
+}
+
+.modal__title {
+  margin: 0 0 14px;
+  font-family: "Cinzel", serif;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: var(--text-primary)
+}
+
+.modal__title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 1px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, transparent, var(--gold-strong), transparent);
+  opacity: .9;
+}
+
+.modal__body{
+  display:grid;
+  gap: 10px;
+  margin-top:10px;
+}
+
+.modal__body p{
+  margin: 0;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(185,124,134,.16);
+  align-items: center;
+}
+
+.modal__body p:last-child{ border-bottom: none; }
+
+.modal__body strong{
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.modal__actions{
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal__actions .btn{
+  border-radius: 999px;
+  padding: 10px 18px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  
+}
+
+.modal__close{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(185,124,134,.25);
+  background: rgba(255,255,255,.55);
+  cursor: pointer;
+}
+.modal__close:hover{
+  background: rgba(255,255,255,.75);
+}
+
+.section .container>* {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Nav un poco más discreto */
+.topbar {
+  background: rgba(246, 241, 232, .70);
+}
+
+.brand {
+  letter-spacing: .10em;
+}
