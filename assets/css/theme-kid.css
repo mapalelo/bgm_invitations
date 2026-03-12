@@ -1,0 +1,202 @@
+.theme-kid {
+  --bg: #F8F2F3;
+  --surface: #F3E6E9;
+
+  --accent: #D9A3A8;
+  --accent-strong: #FF3B3F;
+
+  --gold: #C8B79D;
+  --gold-strong: #B7955A;
+
+  --text-primary: #2A2224;
+  --text-secondary: #7C5F66;
+  --ink: #2f2a28;
+  --btn: #f3e6e9;
+
+  --line: rgba(185, 124, 134, .55);
+
+  --rsvp-paper: #f6e8ec;
+  --rsvp-paper-2: #efd8de;
+  --rsvp-ink: #795866;
+  --rsvp-muted: #bb8396;
+  --rsvp-gold: #D9A3A8;
+  --rsvp-gold-strong: #B97C86;
+
+  --rsvp-overlay: rgba(20, 12, 15, 0.6);
+  --rsvp-panel: rgba(246, 232, 239, 0.801);
+  --rsvp-border: rgba(200, 157, 175, 0.55);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
+.section {
+  background: var(--bg);
+}
+
+.topbar,
+.main {
+  position: relative;
+  z-index: 1;
+}
+
+.theme-kid .topbar {
+  background-color: var(--surface);
+}
+
+
+.btn-primary {
+  background: var(--accent-strong) !important;
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+  transition: all .25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .22);
+  background: #E21B2D !important;
+}
+
+
+/* INTRO SOBRE */
+.envelope .tagline {
+  font-style: normal;
+  letter-spacing: .05em;
+  font-size: 14px;
+}
+
+.envelope {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--btn) url("../img/sobre.png") center/cover no-repeat;
+}
+
+.envelope__bg {
+  position: absolute;
+  inset: 0;
+  filter: contrast(1.04) saturate(.95);
+}
+
+.envelope__veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(246, 232, 237, 0.5);
+}
+
+.envelope__content {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 42px 22px;
+  text-align: center;
+}
+
+.envelope__content::before {
+  display: none;
+}
+
+.envelope .eyebrow {
+  color: rgba(110, 91, 97, 0.95);
+}
+
+.envelope .names {
+  margin: 8px 0 12px;
+  letter-spacing: normal;
+  font-weight: 600;
+  font-size: clamp(28px, 6vw, 64px);
+  color: #FFD23F;
+  line-height: 1.2;
+  font-family: 'Fredoka', serif;
+}
+
+.envelope .tagline {
+  margin: 0 0 18px;
+  color: rgba(47, 42, 40, 0.95);
+}
+
+
+/* Sello base (no debe moverse) */
+.hero-seal {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 18px;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+  transform: translateZ(0);
+}
+
+/* Tu imagen del sello (la que ya tienes) */
+.hero-seal {
+  background-image: url("../img/sello.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Brillo */
+.hero-seal::after {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  /* más grande para que cruce bien */
+  background: linear-gradient(120deg,
+      transparent 40%,
+      rgba(255, 255, 255, .55) 50%,
+      transparent 60%);
+  transform: translateX(-120%) rotate(0.001deg);
+  /* micro fix safari */
+  animation: sealShine 5.5s infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  /* se ve más “dorado” */
+  opacity: .75;
+}
+
+@keyframes sealShine {
+  0% {
+    transform: translateX(-120%) rotate(0.001deg);
+  }
+
+  55% {
+    transform: translateX(120%) rotate(0.001deg);
+  }
+
+  100% {
+    transform: translateX(120%) rotate(0.001deg);
+  }
+}
+
+
+.envelope .hint {
+  margin: 14px 0 0;
+  font-size: 12px;
+  letter-spacing: .12em;
+  color: rgba(110, 91, 98, 0.7);
+  text-transform: uppercase;
+}
+
+/* Animación al abrir */
+.envelope--hide {
+  animation: envelopeFade .52s ease forwards;
+}
+
+@keyframes envelopeFade {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
