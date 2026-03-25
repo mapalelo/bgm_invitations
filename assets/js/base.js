@@ -1,13 +1,13 @@
 
   // 1) Sobre: desaparece y muestra la página
-    const envelope = document.getElementById('envelope');
+    const envelokidIntrope = document.getElementById('kidIntro');
     const btnOpen = document.getElementById('openInvite');
 
     function openInvitation(){
-      envelope.classList.add('envelope--hide');
+      kidIntro.classList.add('kidIntro--hide');
       // opcional: remover del DOM después de animación
       setTimeout(() => {
-        envelope.style.display = 'none';
+        kidIntro.style.display = 'none';
         document.body.classList.add('page-ready');
         window.location.hash = '#inicio';
       }, 520);
@@ -18,7 +18,7 @@
     // Si el usuario scrollea, también abrimos (se siente natural)
     let openedByScroll = false;
     window.addEventListener('wheel', () => {
-      if (!openedByScroll && envelope && envelope.style.display !== 'none') {
+      if (!openedByScroll && kidIntro && kidIntro.style.display !== 'none') {
         openedByScroll = true;
         openInvitation();
       }

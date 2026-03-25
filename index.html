@@ -9,17 +9,19 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Patrick+Hand&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/theme-kid.css" />
+  <link rel="stylesheet" href="assets/css/intro-kid.css" />
 
 </head>
 
 <body class="theme-kid">
 
 
-  <!-- INTRO SOBRE -->
+  <!-- INTRO SOBRE 
   <section class="envelope" id="envelope" aria-label="Sobre de invitación">
     <div class="envelope__bg" aria-hidden="true"></div>
     <div class="envelope__veil" aria-hidden="true"></div>
@@ -39,7 +41,39 @@
     </div>
   </section>
 
-  <!-- MAIN -->
+-->
+
+  <div id="kidIntro" class="kid-intro" role="dialog" aria-modal="true" aria-label="Pantalla de bienvenida">
+    <div class="kid-intro__bg" aria-hidden="true"></div>
+
+    <!-- Globos -->
+    <div class="balloon b1"><span class="string"></span></div>
+    <div class="balloon b2"><span class="string"></span></div>
+    <div class="balloon b3"><span class="string"></span></div>
+    <div class="balloon b4"><span class="string"></span></div>
+    <div class="balloon b5"><span class="string"></span></div>
+
+
+    <!-- Confeti (se generan con JS) -->
+    <div id="confetti" class="confetti" aria-hidden="true"></div>
+
+    <div class="kid-intro__card">
+      <p class="kid-intro__eyebrow">¡Ven a festejar!</p>
+      <h1 class="kid-intro__title">Mi 5° cumpleaños</h1>
+      <p class="kid-intro__subtitle">Familia Pérez López</p>
+
+      <button id="openInvite" class="kid-intro__btn btn" type="button">
+        Entrar a la fiesta
+      </button>
+    </div>
+    <!-- Elmo (PNG con fondo transparente) -->
+    <div class="intro-elmo" aria-hidden="true">
+      <img src="assets/img/elmo-intro.png" alt="">
+    </div>
+
+  </div>
+
+  <!-- 
   <header class="topbar" id="topbar">
     <nav class="nav">
       <a class="brand" href="#inicio" aria-label="Inicio">Cumpleaños de Cristian</a>
@@ -49,7 +83,7 @@
         <a href="#confirmar">Confirmación</a>
       </div>
     </nav>
-  </header>
+  </header> -->
 
   <main id="inicio" class="main">
     <!-- HERO -->
@@ -113,7 +147,7 @@
     <section class="section section--tight" id="contador">
       <div class="container">
         <div class="card">
-          <h2 class="section-title">Nos vemos en...</h2>
+          <h2 class="section-title">contando los días para la fiesta</h2>
           <div class="countdown">
             <div class="countdown-block">
               <span class="number">201</span>
@@ -184,32 +218,15 @@
 
     <!-- REGALOS -->
     <section class="section section-gifts" id="regalos">
-      <h2 class="section-title">MESA DE REGALOS</h2>
+      <h2 class="section-title">Lo más importante es compartir este día contigo</h2>
 
-      <div class="gifts-grid">
-        <!-- Sobres -->
-        <div class="gift-item">
-          <h3>Lluvia de Sobres</h3>
-          <p>Tu presencia es nuestro mejor regalo… Pero si deseas traer un detalle, será bienvenido 🎁</p>
-          <button class="btn btn-primary btn-small" data-modal="modal-sobres">
-            Ver indicaciones
-          </button>
-        </div>
-        <div class="modal" id="modal-sobres" aria-hidden="true">
-          <div class="modal__backdrop" data-close></div>
-          <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="ms-title">
-            <button class="modal__close" type="button" data-close aria-label="Cerrar">×</button>
+      <div class="gift-wrapper">      
+        <p>Si deseas traer un detalle, será bienvenido 🎁</p>
 
-            <h3 class="modal__title" id="ms-title">Lluvia de sobres</h3>
-            <div class="modal__note">
-              <p>Habrá una mesa/buzón en la recepción para que puedas dejar tu sobre con tranquilidad.
-                Gracias por acompañarnos en este día tan especial.
-              </p>
-            </div>
+        <div class="gift-bottom">
+          <div class="gift-image-circle">
+            <img src="assets/img/elmo.png">
           </div>
-        </div>
-        <div class="gift-item gift-img">
-          <img src="assets/img/elmo.png" alt="Elmo">
         </div>
       </div>
     </section>
@@ -237,7 +254,7 @@
               <span class="rsvp-field__label">
                 Código personalizado <span class="rsvp-field__hint">(opcional)</span>
               </span>
-              <input type="text" placeholder="APELLIDOS O ALIAS" />
+              <input type="text" placeholder="apellidos o alias" />
             </label>
 
             <button class="btn btn--outline rsvp-panel__primary">
@@ -384,11 +401,10 @@
     <!-- FOOTER -->
     <footer class="footer-wedding">
       <div class="footer-wedding__inner">
-        <div class="footer-wedding__monogram" aria-label="Amelia">
+        <div class="footer-wedding__monogram" aria-label="Cristian">
           <span class="footer-wedding__mono-script">Cristian</span>
-          <p class="footer-wedding__title">Mi 5to cumpleaños</p>
+          <p class="footer-wedding__title">Gracias por celebrar conmigo</p>
         </div>
-        <p class="footer-wedding__text">Gracias por celebrar conmigo</p>
       </div>
     </footer>
   </main>

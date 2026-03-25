@@ -51,8 +51,7 @@ body {
   font-family: 'Fredoka', serif;
   font-size: clamp(38px, 6vw, 72px);
   line-height: 1.1;
-  color: var(--gold-strong);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, .25), 0 0 1px rgba(255, 255, 255, .2);
+  color: var(--accent-strong);
 }
 
 .title {
@@ -236,16 +235,14 @@ body {
   position: relative;
   min-height: 100vh;
   background:
-    linear-gradient(to bottom,
-      rgba(185, 164, 124, 0.4),
-      rgba(185, 171, 124, 0.3),
-      rgba(200, 183, 157, .25)),
+    linear-gradient(to bottom, rgb(255 101 99 / 75%), rgb(255 143 22 / 75%), rgb(255 212 70 / 75%)),
     url("../img/header.jpg") center/cover no-repeat;
 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .hero-card {
@@ -261,17 +258,38 @@ body {
 }
 
 .hero .hero-card .eyebrow {
-  color: #141414;
-  font-weight: 400;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: "Patrick Hand", cursive;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: "—";
+  margin: 0 10px;
+}
+
+.hero-date {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 8px 15px;
+  color: white;
 }
 
 .hero-card .subtle {
   position: relative;
   display: inline-block;
   padding: 6px 14px;
-  color: #141414;
-  font-weight: 400;
+  color: white;
+  font-weight: 500;
   letter-spacing: .02em;
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: "Patrick Hand", cursive;
 }
 
 .hero .eyebrow,
@@ -484,32 +502,23 @@ body {
 
   margin: 0 0 54px;
   text-align: center;
-
-  font-size: 12px;
-  letter-spacing: .35em;
-  text-transform: uppercase;
-  font-weight: 500;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 19px;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+  font-weight: 700;
   color: var(--accent-strong);
 }
 
 .section-title::before,
 .section-title::after {
   content: "";
-  height: 1px;
-  flex: 1;
-  max-width: 110px;
-  background: var(--line);
-  opacity: .85;
-}
-
-.section-title::before {
-  right: 100%;
-  margin-right: 20px;
-}
-
-.section-title::after {
-  left: 100%;
-  margin-left: 20px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #ff4d5a;
+  border-radius: 50%;
+  margin: 0 10px;
 }
 
 /*Conteo tiempo */
@@ -548,6 +557,8 @@ body {
 }
 
 /* Itinerario */
+
+
 .timeline-editorial {
   position: relative;
   max-width: 900px;
@@ -565,27 +576,68 @@ body {
   left: 50%;
   top: 18px;
   bottom: 18px;
-  width: 1px;
-  background: var(--accent);
+  width: 4px;
   transform: translateX(-50%);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: .35em;
+  background-image: radial-gradient(circle, #ff4d5a 2px, transparent 2px);
+  background-size: 4px 16px;
+  background-repeat: repeat-y;
 }
 
-
 .timeline-item {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  margin: 90px 0;
+  min-height: 120px;
 }
+
+.timeline-content {
+  padding-left: 60px;
+}
+
+.timeline-time {
+  padding-right: 60px;
+  text-align: right;
+}
+
+.timeline-wrapper {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff4d5a;
+  z-index: 2;
+}
+
+.timeline-stack {
+  position: absolute;
+  left: 50%;
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+  transform: translateX(-50%);
+  background: #ffd166;
+  opacity: 0.8;
+}
+
+
 
 .timeline-time {
   text-align: right;
   padding-right: 60px;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: .3em;
   color: var(--accent-strong);
+  font-family: 'Patrick Hand', cursive;
+  font-weight: 600;
 }
 
 .timeline-content {
@@ -670,39 +722,74 @@ body {
   text-align: center;
 }
 
-.gifts-grid {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
+.gift-wrapper p {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: #2e252b;
+}
+
+.gift-wrapper {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  grid-template-columns: 1fr 320px;
+  text-align: center;
 }
 
-.gift-img img {
-  width: 260px;
-  object-fit: contain;
-  background: #ffe49e;
-  border-radius: 50%;
-  padding: 20px;
-  height: 240px;
+.gift-bottom {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.gift-image-circle {
+  background: #f3d48b;
+  border: 3px dashed #ff4d5a;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   width: 240px;
+  height: 240px;
+  overflow: visible;
+  border-radius: 50%;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.gift-item h3 {
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.gift-image-circle img {
+  position: relative;
+  top: -8px;
+  width: 190px;
+  height: auto;
+  position: relative;
+  transform: scale(1.05);
+}
+
+.gift-subtitle {
   font-family: 'Fredoka', serif;
   font-size: 26px;
   margin-bottom: 16px;
   color: #2E2A25;
+  margin-bottom: 10px;
 }
 
-.gift-item p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #6F6252;
-  max-width: 320px;
-  margin: 0 auto 22px;
+.gift-bottom .btn {
+  margin-top: 15px;
 }
 
 /* Responsive */
@@ -728,13 +815,13 @@ body {
 
 /* RSVP */
 
-.rsvp-full{
+.rsvp-full {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
 }
 
-.rsvp-full__bg{
+.rsvp-full__bg {
   position: absolute;
   inset: 0;
   background: url("../img/rsvp-kid.jpg") center/cover no-repeat;
@@ -743,7 +830,7 @@ body {
   filter: saturate(.95) contrast(.95);
 }
 
-.rsvp-full__overlay{
+.rsvp-full__overlay {
   position: relative;
   z-index: 1;
   min-height: 100vh;
@@ -754,40 +841,38 @@ body {
   padding: 80px 20px;
 }
 
-.rsvp-full__overlay::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(to bottom,
-      rgba(255, 200, 61, 0.8),
-      rgba(255, 210, 97, 0.65),
-      rgba(255, 218, 124, 0.55));
+.rsvp-full__overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgb(255 101 99 / 75%),
+      rgb(255 143 22 / 75%), rgb(255 212 70 / 75%));
   backdrop-filter: blur(3px);
   z-index: 0;
 }
 
-.rsvp-panel{
+.rsvp-panel {
   position: relative;
   z-index: 1;
   width: min(860px, 92vw);
   padding: 52px 56px;
   background: var(--rsvp-panel);
-  border: 1px solid var(--rsvp-border);
-  box-shadow: 0 28px 90px rgba(0,0,0,.38);
-  outline: 1px solid rgba(200,183,157,.35);
+  border: 10px solid #ff3b3b;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, .38);
+  outline: 1px solid rgba(200, 183, 157, .35);
   outline-offset: -10px;
-  border-radius: 0;
+  border-radius: 28px;
   color: var(--rsvp-ink);
 
   display: none;
 }
 
 
-.rsvp-panel--active{
+.rsvp-panel--active {
   display: block;
 }
 
-.rsvp-panel__title{
+.rsvp-panel__title {
   font-family: "Fredoka", serif;
   font-size: 28px;
   text-transform: none;
@@ -797,26 +882,28 @@ body {
   color: var(--rsvp-ink);
 }
 
-.rsvp-panel__subtitle{
+.rsvp-panel__subtitle {
   margin: 0 0 26px;
   text-align: center;
   color: var(--rsvp-muted);
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: .22em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   line-height: 1.6;
+  font-family: 'Patrick Hand', cursive;
 }
 
-.rsvp-panel__family{
+.rsvp-panel__family {
   margin: 0 0 14px;
   text-align: center;
   color: var(--rsvp-muted);
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: .28em;
-  text-transform: uppercase;
+  text-transform: lowercase;
+  font-family: 'Patrick Hand', cursive;
 }
 
-.rsvp-panel__text{
+.rsvp-panel__text {
   max-width: 620px;
   margin: 0 auto 18px;
   text-align: center;
@@ -824,7 +911,7 @@ body {
   line-height: 1.7;
 }
 
-.rsvp-panel__divider{
+.rsvp-panel__divider {
   height: 1px;
   width: min(680px, 85%);
   margin: 22px auto;
@@ -832,7 +919,7 @@ body {
   opacity: .95;
 }
 
-.rsvp-panel__form{
+.rsvp-panel__form {
   display: grid;
   gap: 16px;
   max-width: 680px;
@@ -840,25 +927,26 @@ body {
 }
 
 
-.rsvp-field{
+.rsvp-field {
   display: grid;
   gap: 8px;
 }
 
-.rsvp-field__label{
+.rsvp-field__label {
   color: var(--rsvp-muted);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: .22em;
-  text-transform: uppercase;
+  text-transform: lowercase;
+  font-family: 'Patrick Hand', cursive;
 }
 
-.rsvp-field__hint{
+.rsvp-field__hint {
   opacity: .8;
   font-weight: 400;
 }
 
 .rsvp-field input,
-.rsvp-field textarea{
+.rsvp-field textarea {
   width: 100%;
   padding: 14px 16px;
   background: rgba(255, 255, 255, 0.55);
@@ -868,25 +956,26 @@ body {
   border-radius: 0;
 }
 
-.rsvp-field textarea{
+.rsvp-field textarea {
   min-height: 160px;
   resize: vertical;
 }
 
 .rsvp-field input:focus,
-.rsvp-field textarea:focus{
+.rsvp-field textarea:focus {
   border-color: rgba(183, 158, 90, 0.9);
   box-shadow: 0 0 0 3px rgba(183, 161, 90, 0.14);
 }
 
-.rsvp-panel__helper{
+.rsvp-panel__helper {
   margin: 18px 0 0;
   text-align: center;
   color: rgba(46, 43, 37, 0.75);
   font-size: 13px;
+  font-family: 'Patrick Hand', cursive;
 }
 
-.rsvp-summary{
+.rsvp-summary {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
@@ -894,20 +983,21 @@ body {
   margin: 0 auto 6px;
 }
 
-.rsvp-summary__column{
+.rsvp-summary__column {
   text-align: center;
 }
 
-.rsvp-summary__label{
+.rsvp-summary__label {
   display: block;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: .28em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--rsvp-muted);
   margin-bottom: 6px;
+  font-family: 'Patrick Hand', cursive;
 }
 
-.rsvp-summary__value{
+.rsvp-summary__value {
   display: block;
   font-family: "Fredoka", serif;
   font-size: 18px;
@@ -915,22 +1005,24 @@ body {
   color: var(--rsvp-ink);
 }
 
-.rsvp-list{
+.rsvp-list {
   max-width: 760px;
   margin: 0 auto;
   display: grid;
   gap: 22px;
 }
 
-.rsvp-list__group-title{
-  font-size: 12px;
+.rsvp-list__group-title {
+  font-size: 13px;
   letter-spacing: .28em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: var(--rsvp-muted);
   margin-bottom: 10px;
+  font-family: 'Patrick Hand', cursive;
+
 }
 
-.rsvp-list__row{
+.rsvp-list__row {
   display: grid;
   grid-template-columns: 1fr auto auto;
   gap: 18px;
@@ -940,54 +1032,56 @@ body {
   border-top: 1px solid rgba(200, 157, 178, 0.35);
 }
 
-.rsvp-list__group .rsvp-list__row:last-child{
+.rsvp-list__group .rsvp-list__row:last-child {
   border-bottom: 1px solid rgba(200, 157, 178, 0.35);
 }
 
-.rsvp-list__name{
+.rsvp-list__name {
   letter-spacing: .08em;
   text-transform: uppercase;
   font-size: 12px;
   color: var(--rsvp-ink);
 }
 
-.rsvp-list__choice{
+.rsvp-list__choice {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 12px;
   color: var(--rsvp-muted);
   letter-spacing: .10em;
+  font-family: 'Patrick Hand', cursive;
 }
 
-.rsvp-list__choice input{
+.rsvp-list__choice input {
   accent-color: var(--rsvp-gold-strong);
 }
 
-.btn{
+.btn {
   border-radius: 999px;
   padding: 12px 22px;
   letter-spacing: .18em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-weight: 500;
   font-size: 12px;
   cursor: pointer;
+  font-family: 'Fredoka', serif;
 }
 
-.rsvp-panel__primary.btn--outline{
+.rsvp-panel__primary.btn--outline {
   background: var(--rsvp-gold-strong);
   border-color: var(--rsvp-gold);
   color: #fff;
 }
 
-.rsvp-panel__secondary.btn--outline{
+.rsvp-panel__secondary.btn--outline {
   background: transparent;
   border-color: rgba(200, 157, 177, 0.85);
   color: var(--rsvp-ink);
 }
 
 
-.rsvp-panel__actions{
+.rsvp-panel__actions {
   margin-top: 26px;
   display: flex;
   gap: 14px;
@@ -995,10 +1089,10 @@ body {
   flex-wrap: wrap;
 }
 
-.rsvp-modal{
+.rsvp-modal {
   position: fixed;
   inset: 0;
-  display: none; 
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 24px;
@@ -1007,7 +1101,7 @@ body {
   z-index: 9999;
 }
 
-.rsvp-modal__box{
+.rsvp-modal__box {
   width: min(520px, 92vw);
   background: rgba(246, 245, 232, 0.92);
   border: 1px solid rgba(200, 188, 157, 0.55);
@@ -1017,7 +1111,7 @@ body {
   text-align: center;
 }
 
-.rsvp-modal__icon{
+.rsvp-modal__icon {
   width: 54px;
   height: 54px;
   border-radius: 999px;
@@ -1029,19 +1123,19 @@ body {
   font-weight: 700;
 }
 
-.rsvp-modal__title{
+.rsvp-modal__title {
   margin: 0 0 8px;
   font-family: "Fredoka", serif;
   text-transform: none;
   color: var(--rsvp-ink);
 }
 
-.rsvp-modal__text{
+.rsvp-modal__text {
   margin: 0 0 18px;
   color: var(--rsvp-muted);
 }
 
-.rsvp-modal__btn{
+.rsvp-modal__btn {
   background: var(--rsvp-gold-strong);
   border: 1px solid rgba(183, 90, 129, 0.9);
   color: #fff;
@@ -1050,49 +1144,52 @@ body {
 }
 
 /* ============ Responsive ============ */
-@media (max-width: 720px){
-  .rsvp-panel{
+@media (max-width: 720px) {
+  .rsvp-panel {
     padding: 40px 22px;
   }
 
-  .rsvp-summary{
+  .rsvp-summary {
     grid-template-columns: 1fr;
   }
 
-  .rsvp-list__row{
+  .rsvp-list__row {
     grid-template-columns: 1fr;
     gap: 10px;
     text-align: left;
   }
 
-  .rsvp-panel__actions{
+  .rsvp-panel__actions {
     justify-content: center;
   }
 }
 
 
-.footer-wedding{
-  background: #191718;
+.footer-wedding {
+  background: #ffb347;
   color: #F6F1E8;
   padding: 80px 20px;
   text-align: center;
+  border-top: 5px dashed #ff3b3b;
 }
 
-.footer-wedding__monogram{
+.footer-wedding__monogram {
   font-family: "Fredoka", cursive;
   font-size: 40px;
-  color: var(--accent-strong);
+  color: #ff3b3b;
+    margin-bottom: 10px;
   font-weight: 600;
 }
 
-.footer-wedding__title{
-  font-family: "Fredoka", serif;
+.footer-wedding__title {
+  font-family: 'Patrick Hand', cursive;
   font-size: 20px;
-  margin-bottom: 8px;
-  color: var(--gold-strong);
+  margin-bottom: 10px;
+  color: #fafafa;
+  text-transform: lowercase;
 }
 
-.footer-wedding__text{
+.footer-wedding__text {
   font-size: 14px;
   opacity: .8;
 }
