@@ -1,12 +1,12 @@
 .theme-kid {
-  --bg: #f8f7f2;
+  --bg: #FFF8EE;
   --surface: #f3ede6;
 
-  --accent: #E21B2D;
-  --accent-strong: #FF3B3F;
+  --accent: #c72a2a;
+  --accent-strong: #ef4444;
 
-  --gold: #ffe49e;
-  --gold-strong: #FFC83D;
+  --gold: #FFE066;
+  --gold-strong: #FFC300;
 
   --text-primary: #2a2722;
   --text-secondary: #7c735f;
@@ -17,10 +17,10 @@
 
   --rsvp-paper: #f5f0e1;
   --rsvp-paper-2: #ece0bf;
-  --rsvp-ink: #E21B2D;
+  --rsvp-ink: #ef4444;
   --rsvp-muted: rgb(29, 29, 29);
-  --rsvp-gold: #ffe49e;
-  --rsvp-gold-strong: #FFC83D;
+  --rsvp-gold: #FFE066;
+  --rsvp-gold-strong: #FFC300;
 
   --rsvp-overlay: rgba(20, 18, 12, 0.6);
   --rsvp-panel: rgba(246, 244, 232, 0.801);
@@ -219,25 +219,20 @@ body {
   }
 }
 
-/* Main background touches */
-.main {
-  background:
-    radial-gradient (1200px 600px at 20% 10%,
-      rgba(214, 181, 122, .14),
-      transparent 60%),
-    radial-gradient(900px 500px at 80% 30%, rgba(176, 141, 87, .10),
-      transparent 55%), linear-gradient(180deg, #f8f2f3, #FBF7F0);
-}
+
 
 /* Hero card */
+
 
 .hero {
   position: relative;
   min-height: 100vh;
   background:
-    linear-gradient(to bottom, rgb(255 101 99 / 75%), rgb(255 143 22 / 75%), rgb(255 212 70 / 75%)),
+    linear-gradient(180deg,
+      rgba(255, 224, 102, 0.85) 0%,
+      rgba(255, 212, 59, 0.5) 50%,
+      rgba(255, 195, 0, 0.4) 100%),
     url("../img/header.jpg") center/cover no-repeat;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -743,7 +738,7 @@ body {
 }
 
 .gift-image-circle {
-  background: #f3d48b;
+  background: #FFF4CC;
   border: 3px dashed #ff4d5a;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   width: 240px;
@@ -845,8 +840,11 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgb(255 101 99 / 75%),
-      rgb(255 143 22 / 75%), rgb(255 212 70 / 75%));
+  background:
+    linear-gradient(180deg,
+      rgba(255, 224, 102, 0.75) 0%,
+      rgba(255, 212, 59, 0.5) 50%,
+      rgba(255, 195, 0, 0.4) 100%);
   backdrop-filter: blur(3px);
   z-index: 0;
 }
@@ -856,9 +854,9 @@ body {
   z-index: 1;
   width: min(860px, 92vw);
   padding: 52px 56px;
-  background: var(--rsvp-panel);
-  border: 10px solid #ff3b3b;
-  box-shadow: 0 28px 90px rgba(0, 0, 0, .38);
+  background: #FFF8EE;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
+  border: 3px solid rgba(255, 59, 59, 0.6);
   outline: 1px solid rgba(200, 183, 157, .35);
   outline-offset: -10px;
   border-radius: 28px;
@@ -1069,9 +1067,9 @@ body {
 }
 
 .rsvp-panel__primary.btn--outline {
-  background: var(--rsvp-gold-strong);
+  background: linear-gradient(180deg, #FFD43B, #FFC300);
+  color: #222;
   border-color: var(--rsvp-gold);
-  color: #fff;
 }
 
 .rsvp-panel__secondary.btn--outline {
@@ -1166,18 +1164,23 @@ body {
 
 
 .footer-wedding {
-  background: #ffb347;
+  background: linear-gradient(
+  180deg,
+  #FFE066,
+  #FFD43B,
+  #FFC300);
   color: #F6F1E8;
   padding: 80px 20px;
   text-align: center;
-  border-top: 5px dashed #ff3b3b;
+  border-top: 3px solid;
+  border-image: linear-gradient(90deg, #FF3B3F, #FFD43B) 1;
 }
 
 .footer-wedding__monogram {
   font-family: "Fredoka", cursive;
   font-size: 40px;
   color: #ff3b3b;
-    margin-bottom: 10px;
+  margin-bottom: 10px;
   font-weight: 600;
 }
 
@@ -1185,7 +1188,7 @@ body {
   font-family: 'Patrick Hand', cursive;
   font-size: 20px;
   margin-bottom: 10px;
-  color: #fafafa;
+  color: #161616;
   text-transform: lowercase;
 }
 
