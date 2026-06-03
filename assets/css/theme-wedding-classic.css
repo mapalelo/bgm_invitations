@@ -557,9 +557,9 @@ body {
 .timeline-item {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 60px 1fr;
-  align-items: start;
-  margin: 42px 0;
+  grid-template-columns: 1fr 80px 1fr;
+  align-items: center;
+  margin: 58px 0;
 }
 
 .timeline-item::before {
@@ -586,14 +586,14 @@ body {
 
 .timeline-line,
 .timeline-item::before {
-  left: 46%;
+  left: 50%;
 }
 
 .timeline-time {
-  grid-column: 3;
-  text-align: left;
-  padding-right: 0;
-  padding-left: 60px;
+  grid-column: 1;
+  text-align: right;
+  padding-right: 70px;
+  padding-left: 0;
   margin-top: 6px;
   color: #6F6252;
   font-weight: 500;
@@ -601,10 +601,10 @@ body {
 }
 
 .timeline-content {
-  grid-column: 1;
-  padding-left: 0;
+  grid-column: 3;
+  padding-left: 70px;
   text-align: left;
-  padding-right: 80px
+  padding-right: 0;
 }
 
 .timeline-content h3 {
