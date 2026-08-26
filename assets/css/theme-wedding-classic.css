@@ -1,11 +1,16 @@
-/* THEME: Boda clásica marfil + dorado */
+/* THEME: Boda editorial en azul, azul grisáceo y lila */
 :root {
-  --bg: #F6F1E8;
-  --card: rgba(251, 247, 240, .92);
-  --ink: #1E1B16;
-  --muted: #6E655B;
-  --gold: #B08D57;
-  --border: rgba(176, 141, 87, .18);
+  --bg: #F7F8F8;
+  --card: rgba(252, 252, 251, .92);
+  --ink: #193C47;
+  --muted: #617682;
+  --primary: #AF8DB3;
+  --secondary: #7D99BB;
+  --lilac: #AF8DB3;
+  --blue: #3291A8;
+  --gold: #AF8DB3;
+  --gold-accent: #B79A67;
+  --border: rgba(125, 153, 187, .28);
 }
 
 /* NOMBRES Y TÍTULOS FONT */
@@ -1212,4 +1217,483 @@ body {
 .footer-wedding__text{
   font-size: 14px;
   opacity: .8;
+}
+
+/* =========================================================
+   PALETA PERSONALIZADA — azul, azul grisáceo y lila
+   El dorado queda reservado a detalles finos de celebración.
+========================================================= */
+body{
+  color: var(--ink);
+  background: var(--bg);
+}
+
+::selection{
+  color: #fff;
+  background: var(--lilac);
+}
+
+:focus-visible{
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.main{
+  background:
+    radial-gradient(900px 520px at 12% 14%, rgba(175,141,179,.13), transparent 62%),
+    radial-gradient(1000px 560px at 88% 34%, rgba(50,145,168,.11), transparent 60%),
+    linear-gradient(180deg, #E8EEF3 0%, #F8F8F7 38%, #F4F1F5 100%);
+}
+
+.topbar{
+  background: rgba(247,248,248,.84);
+  border-bottom-color: rgba(125,153,187,.25);
+}
+
+.brand{
+  color: var(--primary);
+}
+
+.nav__links{
+  color: #566F7B;
+}
+
+.nav__links a:hover{
+  color: var(--primary);
+}
+
+.envelope{
+  background-color: #EEF2F4;
+}
+
+.envelope__veil{
+  background:
+    linear-gradient(135deg, rgba(232,238,243,.68), rgba(247,244,248,.62)),
+    rgba(50,145,168,.08);
+}
+
+.envelope .eyebrow,
+.envelope .tagline,
+.envelope .hint{
+  color: #5E7580;
+}
+
+.envelope .names{
+  color: var(--ink);
+  text-shadow: 0 1px 18px rgba(255,255,255,.7);
+}
+
+.seal{
+  filter: drop-shadow(0 8px 16px rgba(25,60,71,.14));
+}
+
+.hero{
+  background:
+    linear-gradient(135deg, rgba(232,238,243,.74), rgba(175,141,179,.20)),
+    url("../img/header.jpg") center/cover no-repeat;
+}
+
+.hero .hero-card .eyebrow,
+.hero-card .subtle{
+  color: #355763;
+}
+
+.divider,
+.rsvp-panel__divider{
+  background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+}
+
+.section-title,
+.timeline-time,
+.label,
+.parents-grid p,
+.honor-role{
+  color: #617682;
+}
+
+.section-title::before,
+.section-title::after,
+.timeline-line{
+  background: linear-gradient(90deg, var(--secondary), var(--gold-accent));
+}
+
+.section-parents,
+.section-gifts{
+  background: rgba(247,248,248,.82);
+}
+
+.parents-grid h4,
+.timeline-content h3,
+.gift-item h3,
+.modal__title,
+.number{
+  color: var(--ink);
+}
+
+.timeline-content p,
+.gift-item p,
+.modal__body p,
+.modal__note{
+  color: #5C717C;
+}
+
+.separator{
+  color: var(--secondary);
+}
+
+.section-honor::before,
+.section-story .story-bg{
+  background:
+    linear-gradient(rgba(18,48,58,.72), rgba(43,48,70,.68)),
+    url("../img/foto-novios.jpg") center/cover no-repeat;
+}
+
+.section-honor .section-title::before,
+.section-honor .section-title::after,
+.section-title--on-photo::before,
+.section-title--on-photo::after{
+  background: var(--gold-accent);
+}
+
+.story-image img{
+  border-color: rgba(183,154,103,.88);
+}
+
+.story-song span{
+  color: #E0C997;
+}
+
+.btn--primary,
+.btn-gold,
+.rsvp-panel__primary.btn--outline,
+.rsvp-modal__btn{
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 12px 28px rgba(175,141,179,.24);
+}
+
+.btn--primary:hover,
+.btn-gold:hover,
+.rsvp-panel__primary.btn--outline:hover,
+.rsvp-modal__btn:hover{
+  background: #95749A;
+  border-color: #95749A;
+  box-shadow: 0 15px 34px rgba(175,141,179,.30);
+}
+
+.btn--ghost,
+.btn--outline,
+.rsvp-panel__secondary.btn--outline{
+  color: var(--ink);
+  background: rgba(255,255,255,.46);
+  border-color: rgba(125,153,187,.72);
+}
+
+.modal__backdrop,
+.rsvp-modal{
+  background: rgba(17,43,52,.66);
+}
+
+.modal__panel,
+.rsvp-modal__box{
+  background: rgba(248,249,249,.96);
+  border-color: rgba(125,153,187,.48);
+  outline-color: rgba(183,154,103,.28);
+}
+
+.modal__close{
+  color: var(--ink);
+  background: rgba(232,238,243,.86);
+}
+
+:root{
+  --rsvp-paper: #F7F8F8;
+  --rsvp-paper-2: #E8EEF3;
+  --rsvp-ink: #193C47;
+  --rsvp-muted: #617682;
+  --rsvp-gold: #7D99BB;
+  --rsvp-gold-strong: #AF8DB3;
+  --rsvp-overlay: rgba(17,43,52,.66);
+  --rsvp-panel: rgba(247,248,248,.84);
+  --rsvp-border: rgba(125,153,187,.48);
+}
+
+.rsvp-full__bg{
+  filter: saturate(.78) contrast(.96) hue-rotate(8deg);
+}
+
+.rsvp-panel{
+  outline-color: rgba(183,154,103,.28);
+}
+
+.rsvp-field input,
+.rsvp-field textarea{
+  background: rgba(255,255,255,.70);
+  border-color: rgba(125,153,187,.52);
+}
+
+.rsvp-field input:focus,
+.rsvp-field textarea:focus{
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(175,141,179,.16);
+}
+
+.rsvp-list__choice input{
+  accent-color: var(--primary);
+}
+
+.rsvp-list__row,
+.rsvp-list__group .rsvp-list__row:last-child{
+  border-color: rgba(125,153,187,.30);
+}
+
+.rsvp-modal__icon{
+  color: var(--primary);
+  border-color: rgba(183,154,103,.62);
+}
+
+.footer-wedding{
+  color: #F7F8F8;
+  background: linear-gradient(135deg, #153A45, #34394F);
+  border-top: 1px solid rgba(183,154,103,.42);
+}
+
+.footer-wedding__monogram{
+  color: #D9C18E;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Balance cromático: los tres tonos tienen presencia y función propia. */
+.main{
+  background:
+    radial-gradient(980px 580px at 8% 16%, rgba(175,141,179,.26), transparent 64%),
+    radial-gradient(1050px 620px at 92% 38%, rgba(125,153,187,.14), transparent 62%),
+    linear-gradient(180deg, #F0EAF1 0%, #F8F5F8 46%, #EDF1F5 100%);
+}
+
+.topbar{
+  background: linear-gradient(90deg, rgba(239,244,247,.94), rgba(246,240,247,.94));
+  border-bottom-color: rgba(175,141,179,.34);
+}
+
+.brand{
+  color: var(--lilac);
+}
+
+.nav__links a{
+  color: #667F9C;
+}
+
+.nav__links a:hover{
+  color: var(--lilac);
+}
+
+.envelope__veil{
+  background:
+    linear-gradient(135deg, rgba(50,145,168,.12), rgba(175,141,179,.20)),
+    rgba(241,244,247,.48);
+}
+
+.hero{
+  background:
+    linear-gradient(135deg, rgba(98,83,111,.52), rgba(175,141,179,.46)),
+    url("../img/header.jpg") center/cover no-repeat;
+}
+
+.hero .hero-card .eyebrow{
+  color: #476B7A;
+}
+
+.hero-card .subtle{
+  color: #594F67;
+}
+
+.hero .btn--ghost{
+  color: #594F67;
+  background: rgba(249,246,250,.78);
+  border-color: var(--lilac);
+}
+
+.section-parents{
+  background: linear-gradient(135deg, rgba(245,238,246,.96), rgba(233,238,244,.94));
+  border-top: 1px solid rgba(125,153,187,.22);
+  border-bottom: 1px solid rgba(175,141,179,.22);
+}
+
+.section-parents .section-title,
+.section-gifts .section-title{
+  color: #765F79;
+}
+
+.parents-grid > div:nth-child(odd) h4{
+  color: #2B7486;
+}
+
+.parents-grid > div:nth-child(even) h4{
+  color: #765F79;
+}
+
+.section-honor::before,
+.section-story .story-bg{
+  background:
+    linear-gradient(135deg, rgba(76,54,80,.78), rgba(43,66,84,.70)),
+    url("../img/foto-novios.jpg") center/cover no-repeat;
+}
+
+.section--tight{
+  background: linear-gradient(90deg, rgba(50,145,168,.07), rgba(175,141,179,.12));
+}
+
+.countdown-block:nth-of-type(odd) .number{
+  color: var(--primary);
+}
+
+.countdown-block:nth-of-type(even) .number{
+  color: #896D8D;
+}
+
+.separator{
+  color: var(--secondary);
+}
+
+.timeline-line{
+  background: linear-gradient(180deg, var(--primary), var(--secondary), var(--lilac));
+}
+
+.timeline-item:nth-of-type(odd) .timeline-time{
+  color: #2B7486;
+}
+
+.timeline-item:nth-of-type(even) .timeline-time{
+  color: #806984;
+}
+
+.timeline-item:nth-of-type(even) .btn-gold,
+.gift-item:nth-of-type(even) .btn-gold{
+  background: var(--lilac);
+  border-color: var(--lilac);
+  box-shadow: 0 12px 28px rgba(175,141,179,.22);
+}
+
+.timeline-item:nth-of-type(even) .btn-gold:hover,
+.gift-item:nth-of-type(even) .btn-gold:hover{
+  background: #95749A;
+  border-color: #95749A;
+}
+
+.section-gifts{
+  background:
+    linear-gradient(120deg, rgba(175,141,179,.22), transparent 46%),
+    linear-gradient(300deg, rgba(125,153,187,.14), transparent 48%),
+    #F8F8F7;
+}
+
+.gift-item{
+  padding: 26px 20px;
+}
+
+.modal__panel,
+.rsvp-modal__box{
+  background:
+    linear-gradient(135deg, rgba(232,239,244,.97), rgba(246,240,247,.97));
+}
+
+.rsvp-panel{
+  background:
+    linear-gradient(135deg, rgba(237,243,246,.90), rgba(246,239,247,.88));
+  border-color: rgba(125,153,187,.58);
+  box-shadow:
+    0 28px 90px rgba(17,43,52,.34),
+    inset 0 0 0 1px rgba(175,141,179,.18);
+}
+
+.rsvp-panel__title,
+.rsvp-summary__value{
+  color: #765F79;
+}
+
+.rsvp-field input:focus,
+.rsvp-field textarea:focus{
+  border-color: var(--lilac);
+  box-shadow: 0 0 0 3px rgba(175,141,179,.16);
+}
+
+.rsvp-panel__secondary.btn--outline{
+  color: #765F79;
+  border-color: var(--lilac);
+}
+
+.footer-wedding{
+  background:
+    linear-gradient(120deg, #59475D 0%, #554E68 55%, #38556F 100%);
+}
+
+/* Hero: contraste claro y nombres con la paleta completa. */
+.hero .hero-card .eyebrow,
+.hero-card .subtle{
+  color: rgba(255,255,255,.94);
+  text-shadow: 0 2px 14px rgba(17,43,52,.48);
+}
+
+.hero-card .headline{
+  display: inline-block;
+  max-width: 100%;
+  color: var(--primary);
+  padding: .08em .22em .12em;
+  line-height: 1.18;
+  background: linear-gradient(
+    100deg,
+    #AF8DB3 0%,
+    #AF8DB3 36%,
+    #7D99BB 70%,
+    #3291A8 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 10px rgba(17,43,52,.26));
+}
+
+@media (max-width: 520px){
+  .hero-card .headline{
+    font-size: clamp(34px, 9.2vw, 42px);
+    padding-inline: .28em;
+  }
+}
+
+.envelope .names{
+  display: inline-block;
+  color: var(--primary);
+  padding: .08em .22em .12em;
+  line-height: 1.18;
+  background: linear-gradient(
+    100deg,
+    #AF8DB3 0%,
+    #AF8DB3 36%,
+    #7D99BB 70%,
+    #3291A8 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 8px rgba(77,55,81,.18));
+}
+
+.section-honor .honor-role,
+.section-story .section-title--on-photo{
+  color: #FFF7EA;
+  font-weight: 500;
+  text-shadow:
+    0 1px 2px rgba(17,43,52,.72),
+    0 3px 14px rgba(17,43,52,.52);
 }

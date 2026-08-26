@@ -60,13 +60,15 @@
     const clabeText = document.getElementById('clabeText');
     const copyHint = document.getElementById('copyHint');
 
-    copyBtn.addEventListener('click', async () => {
-      try{
-        await navigator.clipboard.writeText(clabeText.textContent.replace(/\s+/g,' ').trim());
-        copyHint.style.display = 'block';
-        setTimeout(() => copyHint.style.display = 'none', 1200);
-      }catch(e){
-        // fallback simple
-        alert('No se pudo copiar automáticamente. Copia manual: ' + clabeText.textContent);
-      }
-    });
+    if (copyBtn && clabeText && copyHint) {
+      copyBtn.addEventListener('click', async () => {
+        try{
+          await navigator.clipboard.writeText(clabeText.textContent.replace(/\s+/g,' ').trim());
+          copyHint.style.display = 'block';
+          setTimeout(() => copyHint.style.display = 'none', 1200);
+        }catch(e){
+          // fallback simple
+          alert('No se pudo copiar automáticamente. Copia manual: ' + clabeText.textContent);
+        }
+      });
+    }
