@@ -2,8 +2,14 @@
   // 1) Sobre: desaparece y muestra la página
     const envelope = document.getElementById('envelope');
     const btnOpen = document.getElementById('openInvite');
+    const backgroundVideo = document.querySelector('.cinematic-background__video');
 
     function openInvitation(){
+      if (backgroundVideo) {
+        backgroundVideo.play().catch(() => {
+          // El degradado permanece como fondo si el navegador bloquea el video.
+        });
+      }
       envelope.classList.add('envelope--hide');
       // opcional: remover del DOM después de animación
       setTimeout(() => {

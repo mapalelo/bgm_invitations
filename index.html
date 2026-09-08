@@ -14,7 +14,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/base.css?v=3" />
-  <link rel="stylesheet" href="assets/css/theme-wedding-classic.css?v=11" />
+  <link rel="stylesheet" href="assets/css/theme-wedding-classic.css?v=14" />
 </head>
 
 <body class="theme-wedding">
@@ -38,6 +38,14 @@
       <p class="hint">Desliza o presiona el botón para continuar</p>
     </div>
   </section>
+
+  <!-- FONDO CINEMATOGRÁFICO FIJO DE LA INVITACIÓN -->
+  <div class="cinematic-background" aria-hidden="true">
+    <video class="cinematic-background__video" autoplay muted loop playsinline preload="metadata">
+      <source src="assets/video/prueba_video.mp4" type="video/mp4" />
+    </video>
+    <div class="cinematic-background__veil"></div>
+  </div>
 
   <!-- MAIN -->
   <header class="topbar" id="topbar">
@@ -63,8 +71,8 @@
           <div class="divider" aria-hidden="true"></div>
 
           <div class="hero-actions">
-            <a class="btn btn--primary" href="#rsvp">Confirmar asistencia</a>
-            <a class="btn btn--ghost" href="#detalles">Ver detalles</a>
+            <a class="btn btn--primary" href="#confirmar">Confirmar asistencia</a>
+            <a class="btn btn--ghost" href="#itinerario">Ver detalles</a>
           </div>
         </div>
       </div>
@@ -193,16 +201,10 @@
 
     <!-- NUESTRA HISTORIA -->
     <section class="section section-story section--photo" id="historia" aria-label="Nuestra historia">
-      <div class="story-bg" aria-hidden="true"></div>
-
       <div class="story-inner">
         <h2 class="section-title section-title--on-photo">NUESTRA HISTORIA</h2>
 
         <div class="story-grid">
-          <div class="story-image">
-            <img src="assets/img/novios-perfil.jpg" alt="Foto de los novios" loading="lazy">
-          </div>
-
           <div class="story-content">
             <p class="story-song">
               Until I Found You
@@ -294,8 +296,6 @@
 
     <!-- CONFIRMAR INVITACIÓN -->
     <section id="confirmar" class="rsvp-full">
-      <div class="rsvp-full__bg"></div>
-
       <div class="rsvp-full__overlay">
         <!--  Buscar por código -->
         <div class="rsvp-panel rsvp-panel--active" data-step="1">

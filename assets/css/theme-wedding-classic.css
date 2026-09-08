@@ -1697,3 +1697,317 @@ body{
     0 1px 2px rgba(17,43,52,.72),
     0 3px 14px rgba(17,43,52,.52);
 }
+
+/* =========================================================
+   EXPERIENCIA CINEMATOGRÁFICA
+   El sobre permanece intacto; al abrir, un solo video fijo
+   acompaña todas las secciones como una secuencia de créditos.
+========================================================= */
+.cinematic-background{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(145deg, #241927 0%, #49324D 52%, #254B59 100%);
+}
+
+.cinematic-background__video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.68) contrast(1.04) brightness(.64);
+}
+
+.cinematic-background__veil{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(175,141,179,.50), transparent 46%),
+    radial-gradient(circle at 84% 70%, rgba(50,145,168,.34), transparent 48%),
+    linear-gradient(135deg, rgba(55,34,61,.70), rgba(73,48,78,.66) 48%, rgba(29,65,79,.66));
+}
+
+.topbar,
+.main{
+  position: relative;
+  z-index: 1;
+}
+
+.main,
+.hero,
+.section-parents,
+.section-honor,
+.section--tight,
+.timeline-editorial,
+.section-story,
+.section-gifts,
+.rsvp-full,
+.footer-wedding{
+  background: transparent !important;
+}
+
+.hero,
+.section-parents,
+.section-honor,
+.section--tight,
+.section-story,
+.section-gifts{
+  min-height: 78svh;
+  display: grid;
+  align-items: center;
+}
+
+.hero{
+  min-height: 100svh;
+}
+
+.section-honor::before,
+.section-story .story-bg,
+.rsvp-full__bg{
+  display: none !important;
+  background: none !important;
+}
+
+.topbar{
+  color: #FFF7EA;
+  background: rgba(27,25,38,.48) !important;
+  border-bottom: 1px solid rgba(255,247,234,.14);
+  backdrop-filter: blur(16px);
+}
+
+.brand{
+  color: #E1BEDF;
+}
+
+.nav__links a{
+  color: rgba(255,247,234,.78);
+}
+
+.nav__links a:hover{
+  color: #FFF7EA;
+}
+
+.section-title,
+.section-parents .section-title,
+.section-gifts .section-title,
+.section-story .section-title--on-photo{
+  color: #FFF7EA;
+  text-shadow: 0 2px 16px rgba(0,0,0,.48);
+}
+
+.section-title::before,
+.section-title::after,
+.section-title--on-photo::before,
+.section-title--on-photo::after{
+  background: linear-gradient(90deg, transparent, rgba(225,190,223,.88), transparent);
+}
+
+.hero .hero-card .eyebrow,
+.hero-card .subtle,
+.parents-grid p,
+.honor-role,
+.timeline-time,
+.timeline-content p,
+.gift-item p,
+.label{
+  color: rgba(255,247,234,.76);
+  text-shadow: 0 2px 12px rgba(0,0,0,.46);
+}
+
+.parents-grid h4,
+.parents-grid > div:nth-child(odd) h4,
+.parents-grid > div:nth-child(even) h4,
+.honor-name,
+.timeline-content h3,
+.gift-item h3,
+.number{
+  color: #FFF;
+  text-shadow: 0 3px 18px rgba(0,0,0,.42);
+}
+
+.parents-grid,
+.honor-list,
+.gifts-grid{
+  position: relative;
+  z-index: 1;
+}
+
+.section-parents{
+  border: 0;
+}
+
+.section--tight .container,
+.section-parents > div,
+.section-honor .section__inner,
+.story-inner,
+.section-gifts,
+.timeline-editorial{
+  width: min(1100px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.countdown{
+  margin-top: 0;
+}
+
+.countdown-block:nth-of-type(odd) .number,
+.countdown-block:nth-of-type(even) .number{
+  color: #FFF;
+}
+
+.separator{
+  color: #D9B3D7;
+}
+
+.timeline-editorial{
+  max-width: 900px;
+  padding-block: 16vh;
+}
+
+.timeline-line{
+  background: linear-gradient(180deg, rgba(175,141,179,.30), #AF8DB3, #7D99BB, rgba(50,145,168,.28));
+}
+
+.timeline-item:nth-of-type(odd) .timeline-time,
+.timeline-item:nth-of-type(even) .timeline-time{
+  color: #DAB8D8;
+}
+
+.story-grid{
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+}
+
+.story-content,
+.section-story .story-content{
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.story-song{
+  color: #FFF7EA;
+  text-align: center;
+}
+
+.story-song span{
+  color: #D9B3D7;
+}
+
+.story-text{
+  max-width: 760px;
+  color: rgba(255,255,255,.88);
+  text-align: center;
+  text-wrap: balance;
+  text-shadow: 0 2px 14px rgba(0,0,0,.42);
+}
+
+.gift-item{
+  padding: 30px 22px;
+  background: rgba(24,25,38,.22);
+  border: 1px solid rgba(255,247,234,.12);
+  backdrop-filter: blur(5px);
+}
+
+.rsvp-full__overlay{
+  min-height: 100svh;
+  background: transparent;
+}
+
+.rsvp-full__overlay::before{
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.rsvp-panel{
+  color: #FFF7EA;
+  background: linear-gradient(135deg, rgba(39,29,48,.80), rgba(29,49,65,.78));
+  border-color: rgba(225,190,223,.38);
+  outline-color: rgba(255,247,234,.13);
+  box-shadow: 0 28px 90px rgba(0,0,0,.38);
+  backdrop-filter: blur(16px);
+}
+
+.rsvp-panel__title,
+.rsvp-summary__value,
+.rsvp-panel__text,
+.rsvp-list__name{
+  color: #FFF7EA;
+}
+
+.rsvp-panel__subtitle,
+.rsvp-panel__family,
+.rsvp-field__label,
+.rsvp-panel__helper,
+.rsvp-summary__label,
+.rsvp-list__group-title,
+.rsvp-list__choice{
+  color: rgba(255,247,234,.72);
+}
+
+.rsvp-field input,
+.rsvp-field textarea{
+  color: #FFF;
+  background: rgba(255,255,255,.10);
+  border-color: rgba(225,190,223,.42);
+}
+
+.rsvp-field input::placeholder,
+.rsvp-field textarea::placeholder{
+  color: rgba(255,255,255,.48);
+}
+
+.rsvp-panel__secondary.btn--outline{
+  color: #FFF7EA;
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,247,234,.45);
+}
+
+.footer-wedding{
+  min-height: 54svh;
+  display: grid;
+  place-items: center;
+  border-top-color: rgba(255,247,234,.12);
+}
+
+@media (max-width: 720px){
+  .hero,
+  .section-parents,
+  .section-honor,
+  .section--tight,
+  .section-story,
+  .section-gifts{
+    min-height: auto;
+    padding-block: 110px;
+  }
+
+  .hero{
+    min-height: 100svh;
+  }
+
+  .gifts-grid{
+    gap: 22px;
+  }
+
+  .timeline-editorial{
+    padding-block: 110px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .cinematic-background__video{
+    display: none;
+  }
+}
+
+/* El nombre principal funciona como el título dorado de apertura. */
+.hero-card .headline{
+  color: #D9C18E;
+  background: none;
+  -webkit-text-fill-color: #D9C18E;
+  filter: drop-shadow(0 3px 14px rgba(0,0,0,.38));
+}
